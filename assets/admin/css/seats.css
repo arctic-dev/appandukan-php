@@ -1,0 +1,957 @@
+.userSelectedSeats{color:#3D3D3D;font-size:11px;position:relative;display:block;margin:0 0 40px 0;width: 460px;}
+.price, .seat_number{border:0px solid #E6E6E6;color:#D81313;font-family:Arial;font-size:11px;font-weight:normal;}
+.price {width: 94px; line-height:10px;}
+.seat_number {margin-left: 1px;width:auto;}
+.seatsCol {float:left;margin:0;width:31px;}
+.bookedSeat, .bookedSleeper, .bookedSleeperV, .availableSeat, .availableLadiesSeat, .selectedSeat,
+.availableSleeper, .availableSleeperV, .availableLadiesSleeper, .selectedLadiesSeat, .availableLadiesSleeperV,
+.selectedSleeper, .selectedSleeperV, .selectedLadiesSleeper, .selectedLadiesSleeperV{background-image:url(../images/transparent-backgro-seatlayout.gif);background-repeat:no-repeat;
+    display:block;
+	outline-color:-moz-use-text-color;
+	outline-style:none;
+	outline-width:medium;
+	text-decoration: none;
+	text-indent:-9999px;
+}
+
+.bseat, .nseat, .hseat, .bhseat, .rseat, .selectedSeat,
+.availableSleeper, .availableSleeperV, .availableLadiesSleeper, .selectedLadiesSeat, .availableLadiesSleeperV,
+.selectedSleeper, .selectedSleeperV, .selectedLadiesSleeper, .selectedLadiesSleeperV{background-image:url(../images/transparent-backgro-seatlayout.gif);background-repeat:no-repeat;
+    display:block;
+	outline-color:-moz-use-text-color;
+	outline-style:none;
+	outline-width:medium;
+	text-decoration: none;
+	text-indent:-9999px;
+}
+
+.bseat, .nseat, .rseat
+{
+	height:20px;
+    width:20px;
+}
+
+.bookedSeat, .availableSeat, .availableLadiesSeat, .selectedSeat, .selectedLadiesSeat
+{
+	height:20px;
+    width:20px;
+}
+
+.availableSleeper
+{
+	height:20px;
+    width:40px;
+}
+
+.bhseat, .hseat, .availableSleeper .availableLadiesSleeper, .selectedSleeper, 
+.selectedSleeperV, .selectedLadiesSleeper
+{
+	height:20px;
+    width:40px;
+}
+
+.bookedSleeperV, .availableSleeperV, .selectedSleeperV, .selectedLadiesSleeperV, .availableLadiesSleeperV
+{
+	height:40px;
+    width:20px;
+}
+
+.bookedSleeperV, .bookedSeat, .bookedSleeper { cursor: default; }
+
+.noSeat{ background-position:0 -600px; cursor:default; }
+        
+.bookedSeat              { background-position:0 -40px; }
+.availableSeat           { background-position:0 0px; }
+.availableLadiesSeat     { background-position:0 -20px; }
+.selectedSeat            { background-position:0 -60px; }
+.selectedLadiesSeat      { background-position:-20px -60px; }
+.bookedSleeper           { background-position:-40px -40px; }
+.bookedSleeperV          { background-position:-167px 0px; }
+.availableSleeper        {  background-position:-40px 0; }
+.availableSleeperV       { background-position:-124px -0px; }
+.availableLadiesSleeper  { background-position:-40px -20px; }
+.availableLadiesSleeperV { background-position:-124px -40px; }
+.selectedLadiesSleeperV  { background-position:-187px -40px; }
+.selectedSleeper         { background-position:-40px -60px; }
+.selectedLadiesSleeper   { background-position:-80px -60px; }
+.selectedSleeperV        { background-position:-187px 0; }
+
+
+
+
+
+.noSeat{ background-position:0 -600px; cursor:default; }
+        
+.bseat              	 { background-position:0 -40px; }
+.nseat		             { background-position:0 0px; }
+.rseat     { background-position:0 -20px; }
+.selectedSeat            { background-position:0 -60px; }
+.selectedLadiesSeat      { background-position:-20px -60px; }
+.bhseat           { background-position:-40px -40px; }
+.bookedSleeperV          { background-position:-167px 0px; }
+.hseat        {  background-position:-40px 0; }
+.availableSleeperV       { background-position:-124px -0px; }
+.availableLadiesSleeper  { background-position:-40px -20px; }
+.availableLadiesSleeperV { background-position:-124px -40px; }
+.selectedLadiesSleeperV  { background-position:-187px -40px; }
+.selectedSleeper         { background-position:-40px -60px; }
+.selectedLadiesSleeper   { background-position:-80px -60px; }
+.selectedSleeperV        { background-position:-187px 0; }
+
+
+.lowerDeck, .upperDeck
+{
+	-moz-border-radius:6px;
+    border:1px solid #B8B8B8;
+    /*float:left;*/
+    /*float: right;*/
+	background-color:#fff;
+	border-bottom-left-radius: 6px 6px;
+	border-bottom-right-radius: 6px 6px;
+	border-top-left-radius: 6px 6px;
+	border-top-right-radius: 6px 6px;
+}
+
+.seatcontainer div
+{
+	position:absolute;
+	cursor:pointer;
+}
+
+.seatcontainer, .upperDeck
+{
+	-moz-border-radius:6px;
+   /* border:1px solid #B8B8B8;
+    float:left;*/
+    /*float: right;*/
+    
+	border-bottom-left-radius: 6px 6px;
+	border-bottom-right-radius: 6px 6px;
+	border-top-left-radius: 6px 6px;
+	border-top-right-radius: 6px 6px;
+}
+
+
+.upperDeck {  }
+
+.lowerLabel, .upperLabel
+{
+	background-image: url(../images/transparent-backgro-seatlayout.gif);
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	width: 20px;
+}
+
+.lowerLabel 
+{	
+	background-position: -24px -106px;
+    height: 22px;
+	margin:4px 0 0 4px;
+	height:20px;
+}
+
+
+
+.seatcontainer::before
+{
+background-image: url(../images/transparent-backgro-seatlayout.gif);
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    width: 20px;
+    left: -45px !important;
+    top: -4px !important;
+}
+
+.seatcontainer::before
+{	
+	background-position: -24px -106px;
+    height: 22px;
+	margin:4px 0 0 4px;
+	height:20px;
+}
+
+
+.upperLabel 
+{
+	background-position: -58px -132px;
+	height:50px;
+	margin:24px 0 0 12px;
+}
+
+
+.mainIE6 {
+	float:right;font-size:1.2em;text-align: left;left:5px;position:relative;
+	-moz-border-radius: 10px 10px 10px 10px;border: 4px solid lightGrey;display: block;
+	margin-right: 50px; margin-top: 0;padding: 0;
+	width: 700px;
+}
+
+.mainIE8 {
+	float:right;font-size:1.2em;text-align: left;left:5px;position:relative;
+	-moz-border-radius: 10px 10px 10px 10px;border: 4px solid lightGrey;display: block;
+	margin-right: 95px; margin-top: 0;padding: 0;
+	width: 700px;
+}
+
+.mainFF {	
+	font-size:1.2em;text-align: left;	
+	display: block;	
+}
+
+.seat-layout {
+	float:left;
+	padding:0;
+	margin-bottom:10px;
+}
+
+
+.seat-layout-1 {
+	float:left;
+	padding:0;
+	margin-bottom:10px;
+}
+
+.busSeatrgt {
+	float:left;
+	padding:0;
+	margin-bottom:10px;
+}
+
+
+/* self-clear floats  */
+.group:after {content: ".";display: block; clear: both;height: 0;visibility: hidden;}
+/* top: 85px; left:375px; position:relative; margin: 0pt auto ! important; font-size:1.2em;width:720px;text-align:left;padding:25px 0 0; */
+div.full{margin:0 0 20px;padding:0;width:720px;}
+div.tipsLine1{font-size:0.70em;color:#989898;width:450px; float:left; text-align:left; left: 4px; position:relative;}
+.seatSelectionMeta {float:right;margin:0 3px 0 10px;padding:10px;width:154px;
+	/*background-color:#F6F6F6;*/
+	-moz-border-radius:6px;-webkit-border-radius:6px;-khtml-border-radius:6px;border-radius:6px;}
+*html .seatSelectionMeta{width:210px; cursor:inherit;}
+.seatSelectionMeta ol{font-size:0.75em;margin: -18px 0 0;padding:6px;list-style-type: none;} /*background:none repeat scroll 0 0 #FFFFFF;*/
+.seatSelectionMeta ol.sleeperDefn{font-size:0.75em;margin:3px 0 0 10px;padding:0px;}/*background:none repeat scroll 0 0 #FFFFFF;*/
+.seatSelectionMeta ol li{margin:0;padding:2px 0 4px 30px;}
+.seatSelectionMeta ol li span{padding:0px;list-style-type: none;color:#999;}/*color:#999*/
+
+
+.seatSelectionMeta ol.seatsDefn li{background-image:url("../images/side-seats.gif");background-repeat:no-repeat; }/*background-color:#FFFFFF;*/
+.seatSelectionMeta ol.sleeperDefn li{background-image:url("../images/transparent-backgro-seatlayout.gif");background-repeat:no-repeat;}
+
+
+.seatSelectionMeta ol li.availableSeat{background-position:2px 2px; text-indent:0px; width:auto; height:25px; font-size:11px; font-family:Arial;}
+.seatSelectionMeta ol li.availableLadiesSeat{background-position:2px -22px; text-indent:0px; width:auto; height:25px; font-size:11px; font-family:Arial;}
+.seatSelectionMeta ol li.selectedSeat{background-position:2px -45px; text-indent:0px; width:auto; height:25px; font-size:11px; font-family:Arial;}
+.seatSelectionMeta ol li.selectedLadiesSeat{background-position:-230px -68px; text-indent:0px; width:auto; height:25px; font-size:11px; font-family:Arial;}
+.seatSelectionMeta ol li.bookedSeat{background-position:2px -94px; text-indent:0px; width:auto; height:25px; font-size:11px; font-family:Arial;}
+
+.seatSelectionMeta ol li.availableSleeper{background-position:-212px -106px; text-indent:0px; width:auto; height:20px; font-size:11px; font-family:Arial;}
+.seatSelectionMeta ol li.availableLadiesSleeper{background-position:-212px -130px; text-indent:0px; width:auto; height:20px; font-size:11px; font-family:Arial;}
+.seatSelectionMeta ol li.selectedSleeper{background-position:-212px -164px; text-indent:0px; width:auto; height:19px; font-size:11px; font-family:Arial;}
+.seatSelectionMeta ol li.selectedLadiesSleeper{background-position:-248px -195px; text-indent:0px; width:auto; font-size:11px; font-family:Arial;height:20px;}
+.seatSelectionMeta ol li.bookedSleeper{background-position:-212px -210px; text-indent:0px; width:auto; font-size:11px; font-family:Arial;height:18px;}
+
+a.availableSeat:hover { background-position: -20px 0; }
+a.availableSleeper:hover { background-position: -80px 0; }
+a.availableSleeperV:hover { background-position: -145px 0; }
+a.availableLadiesSleeper:hover  { background-position:-80px -20px; }
+a.availableLadiesSleeperV:hover { background-position:-145px -40px; }
+
+.hasCompartment
+{
+	background-image:url(../images/special-case-seats-new.gif); 
+	background-position: 49px 5px;
+	background-repeat: no-repeat;
+}
+
+.busPhotoImg, .busVideoImg,  .closeSeatsImg, .continueBtnimg
+{
+	background-image:url(../images/Sprite-2-no-background1608.gif); 
+	background-repeat: no-repeat;
+	outline-color:-moz-use-text-color;
+	outline-style:none;
+	outline-width:medium;
+	display:block;
+	text-decoration: none;
+}
+
+
+.busPhotoImg
+{
+    background-position: -60px -120px;
+    height: 40px;
+    margin-left: 24px;
+    margin-top: 0;
+    width: 25px;
+    cursor:pointer;
+}
+
+.busVideoImg
+{	
+	background-position: 0px -118px;
+    height: 40px;
+    margin-left: 25px;
+    width: 33px;
+    cursor:pointer;
+}
+
+.busTipImg
+{	
+    background-image:url(../images/Chat_Square.gif); 
+	background-repeat: no-repeat;
+	background-position: 0 2px;
+    height: 36px;
+    margin-left: 27px;
+    width: 25px;
+    cursor:pointer;
+}
+
+.showSpinner, .closeSpinner, .useSpinnerImg,.conSpinner{background-image:url('../images/spinner.gif');background-repeat: no-repeat;}
+.showSpinner 
+{
+	outline-color:-moz-use-text-color;
+	outline-style:none;
+	outline-width:medium;
+	display:block;
+	text-decoration: none;
+	width: 26px;
+	height: 26px;
+}
+
+.closeSpinner
+{
+	outline-color:-moz-use-text-color;
+	outline-style:none;
+	outline-width:medium;
+	text-decoration: none;
+	width: 26px;
+	height: 26px;
+	display:none;
+}
+
+#bpDiv .tvlist{width:158px;}
+.stTxt{color:#a9a9a9;}
+ .stNo1{font-size:11px;color:#7f7f7f;}
+
+
+.closeSeatsImg{background-position: -37px -117px;margin-left: 0;height: 30px;width: 30px;float:right;font-size: 1.2em;margin-right:4px;margin-top: 6px;cursor: pointer;}
+div.tipsLine{font-size:10px;color:#989898;padding: 10px 10px 10px 5px; width:610px; float:left; text-align:left; left:20px; position:relative; text-align: center;}
+.tpHeadCls{margin:10px 7px 7px 7px;color:#d02025;font-weight:bold;font-size:12px}
+#highPriceDesc{margin-top:15px;margin-left:0px;text-align:justify;margin-bottom: 10px;}
+.overPrice{color:#000;font-size:11px;margin:0px 5px 5px 5px;font-weight:normal}
+#highPriceDesc .blackTextBold{margin-bottom:10px;margin-left:5px;font-size:11px;}
+.priceRsons{color:#000;font-size:11px;margin-left:2px;}
+.priceRsons td{font-weight:normal;font-size:11px;}
+.priceRsons .prcol1{vertical-align:top;text-align:left;}
+.priceRsons .prcol2{padding:0 5px}
+.priceRsons .spval{font-weight:bold;}
+.luxFac{margin-left:7px;font-size:11px;color:#000;}
+.luxFac ul{margin-left:2px;padding-left:10px;list-style-type:none;}
+.ovP2{margin-top:20px;}
+.luxuTip{margin-bottom:2px;}
+.luxuTip .smalltext{margin-top:2px;font-size:11px;font-weight:normal}
+.luxuTip .mg10{margin-top:2px;}
+.BodyWrapper{width:920px; margin:0px auto 20px; display:none;}
+.msgRate{left:20px;float:left;display:none;}
+.tipsLine span{font-weight:bold;}
+a.phVideo,a.phVideo:visited{color:#305AA0;text-decoration:underline;outline:none;height: 0px; vertical-align: bottom; margin-left: -5px;}
+.busView{clear:both; font-size:0.75em; left:5px; width:75px; height:auto; float: left; margin-top: 10px;}
+.busView .phVi{margin-top:0;margin-left: -2px;}
+.photoBus, .videoBus, .tipBus{text-align:center; margin-left: 10px; font-size: 11px;}
+.videoBus{margin-top: 10px;}
+.tipBus{margin-top: 10px;}
+.seat-layout{position:relative; float:left;}
+.seat-layout-1{position:relative; float:left;}
+.lowerDeck{position:relative;}
+.seatcontainer{position:relative;}
+.lowerLabel{position:absolute;top:5px;left:5px;}
+.seatcontainer::before{position:absolute;top:5px;left:5px;}
+.lower-seats-area{position:relative; left:58px;top:8px;}
+.upperDeck{position:relative; margin-bottom: 18px;}
+.upperLabel{position:absolute;top:5px;left:5px;}
+.upper-seats-area{position:relative; left:58px;top:8px;}
+.continueBtn{clear:both;margin: -2px 0px 10px 0px; float: right; position: relative; top: 15px;width:130px;}
+.bpListVal{font-size:11px; float: right; position: relative; top: 15px; margin-right: 15px;}
+.bpListVal .filters{width: 175px;}
+.seatSelectionMeta{margin-left: 20px; float:left;}
+.seatsDefn, .sleeperDefn{display:none;}
+.seatsDefn span, .sleeperDefn span{font-family:Arial; font-size:10px;}
+.brdr{border-top: 1px solid #E8E8E8; width:120px;margin:10px 0 15px 10px;}
+.yourSeats{font-size:11px; margin-left: 6px; margin-top: 0px;color:#989898; font-weight: bold;}
+.seat_number{float:left; width: 90px; margin-left: 6px;}
+.seatTxt{float:left;}
+.totalAmount{font-size:11px; clear:left; margin-left: 6px; margin-top: 5px;color:#989898; font-weight: bold;}
+.totalAmount input{width: 86px;}
+.seatVeri{clear:both;text-align:left;margin:18px 0 8px 0;width:100%;overflow:hidden;}
+.veriLogo{float:right;width:10%;}
+.seatVeri .grayTextSmall{width: 70%;float: left;}
+.seatVeri .rtAdd{ margin-left: 190px;background:#f2f2f2 url('../images/ciyimg1.png') no-repeat 5px 6px;padding:4px 3px 4px 20px;border:1px solid #d9d9d9;border-width:1px 0;}
+
+.botTip{margin: 2px 0px 20px 50px; text-align: center; clear: both; color:#B0B0B0;}
+
+.ratingAlgoDivc{width: 810px; display: block; padding-bottom: 10px; height: 380px;display:block;}
+.ratingAlgoDivc .redTextBold{margin-left: 10px; margin-top: 5px; text-align: left;}
+#ratingAlgoDiv .rateDes{float: left; width: 100%; height: 100px; color: rgb(120, 120, 120); text-align: left!important; font-size: 11px;margin:10px;}
+#ratingAlgoDiv .lftMsg{float: left; width:82%;margin-top:10px;}
+.i211,.i210,.i19 span,.i17 div,.i16 div,.i3 div,.i3 span,.i10 div,.i10 span,.ddTime .timeT,.timeT, .bdTime .timeT,#ratingAlgoDiv .lftMsg,  .remindmeBtn,.breadcrump .splitimage,#lowratedAlertBox .close,#shutmoreinfo,#detailspopup1, #notifyMe .notImg, #yesalert, #lowratedAlertBox .titleAlert, .conrateDet, .veriImg, .i11 div, .winSeat,.Dv0,.nodvd,.Bo0,.nobottle,.Bl0,.noblanket,.Cr0,.nocharger,.Dv1,.dvd,.Bo1,.bottle,.Bl1,.blanket,.Cr1,.charger,.travIcon, .busTypIcon, .chuntiIcon, .drop-arrow, .tickUnselected, .tickSelected, .busRateIcon,.amenIcon,.phV,.fareVal2,.i7 span,.stNo,.ddTime .timeC,.timeC,.bdTime  .timeC,.ratingIcon,.viewSeatsImg,.showSeatsImg,.bookImgBtn,.darr, .uarr, .uarr1,.mtickVal,.i6 div{background: url("../images/selectbus1-sprite.gif") no-repeat scroll 0 0 transparent;}
+#ratingAlgoDiv .lftMsg{background-position:right 2px;}
+#ratingAlgoDiv .rgtMsg{float: right; position: relative; margin-top: 10px; margin-left: 10px; margin-right: 28px;}
+.ratingAlgoDivc .botVal{margin-bottom:40px;}
+.ratingAlgoDivc .calcHead{clear:both;margin-top:0;margin-left:0;}
+.ratingAlgoDivc .subHead{float: left; width: 55%; height: 100px; font-size: 11px; margin-left: 0px; color: rgb(120, 120, 120);}
+.ratingAlgoDivc .lftety{text-align: left; width: 80%;}
+.ratingAlgoDivc .rgtRate{border: 1px solid rgb(48, 90, 160); float: right; height: 204px; margin-right: 20px; margin-top: -35px; width: 35%;}
+.imgSpan{padding-left: 0px; border: 0px solid red;}
+.ratingAlgoDivc .grayTextSmall{padding-left: 0px; border: 0px solid red; padding-right: 10px;text-align:left;}
+.spaceVal{text-align: left; width: 62%;}
+.spaceS{text-align: left; width: 78%;}
+.spaceF{text-align: left; width: 56%;}
+
+.spacePr{padding-left:0px;border:0px solid red;padding-right:10px}
+.traC{padding-left:10px;}
+.busC{padding-right:70px;}
+.highF{margin-top:4px;}
+
+.ui-widget-content .bdTime, .ui-widget-content .ddTime{text-decoration:none;}
+.ui-widget-content .bdTime .timeT, .ui-widget-content .ddTime .timeT{text-decoration:underline;}
+.noRev{margin-left:25px;}
+.rateTp{text-align:left;}
+.rateOut{display:none;margin:5px}
+.rateImg{margin-left:18px}
+.rateMsg{padding-top:25px;padding-left:9px;}
+.rateMsg div{margin-left:9px;padding-top:2px;}
+.rateOMsg{padding-top:7px;padding-right:5px}
+.rateOMsg div{margin-left:9px;padding-top:2px;margin-top:28px}
+.rateMsg .blueTextNormal, .rateOMsg .blueTextNormal, .rateNMsg .blueTextNormal{height:30px;vertical-align:bottom;}
+.dNone  {display:none}
+.rateImg2{margin-left:12px}
+.rateTp1{text-align:left;padding-left:13px}
+.rateNMsg{padding-top:11px;padding-left:5px}
+.rateNMsg div{text-align:left;margin-top:26px}
+.rateStr{margin:15px;margin-top:20px;}
+.rateStrmsg{margin:15px}
+.rateStrmsg1{margin:20px 15px 15px 15px}
+.rateStrmsg2{margin:30px 15px 15px 15px}
+.travName{height:50px; padding-right:0;}
+.cancPol{height:20px;padding-top:0px;}
+.cancPol a{padding-top:4px;padding-left:0px}
+.noMtic{text-align:center;}
+.mtickVal{vertical-align:bottom;background-position:0 -798px;display:block;height:20px;width:19px;margin-left:17px;}
+.mtickVal img{margin-top:2px;}
+.mticTp{margin:7px}
+.mticTp .smalltext{margin:5px;}
+.mticTp .grayTextSmall{margin-left:10px;}
+.mticTp .mgVal{margin:10px;}
+.cbusType{height:40px;}
+
+.flashFil{font-size:11px !important;margin:0px !important;padding:0px !important;}
+.flashFil span{font-weight:bold;}
+.flashFil div{padding-top:5px;}
+.oopVal{font-size:15px !important;}
+.remindmeBtn{background-position:0 -57px; display: block;height: 23px;width: 85px;}
+.remindTxt{text-align:center;padding-right:10px}
+
+.useSpinnerImg{margin-right: 0;text-align:center;}
+.useSpinnerImg{background-position:center 0;height:16px;display:none;}
+.bpTip{padding-left:10px;}
+.bpTipdet{padding-left:20px}
+.bpTipdet .locV{color:#000;font-size:11px;width:110px;line-height:12px;padding:5px 0;}
+.bpTipdet .timVal{color:#000;font-size:11px;line-height:12px;padding:5px 0;}
+#searchDetails div{border-bottom:0px solid #F3F3F3;padding:5px;padding-left:0px}
+#searchDetails .grayTextBold{font-size:12px;}
+.ui-jqgrid tr.jqgrow .showlat{border-bottom:1px solid #E8E8E8;}
+.blkMsg{color: darkGray;margin-left: -400px;margin-top: 0px;text-align: center;width: 960px;}
+.blkTxtMsg{height:65px; width:800px;}
+.blkMsgie{color: darkGray; font-size: 14px; font-weight:bold; font-family: Arial; margin-left: 0px;margin-top: 10px;text-align: center;width: 100%;}
+.breadcrump .splitimage{background-position:13px -124px;padding:0 22px !important;display:inline;zoom:100%;}
+.bpTipdet{height:auto;}
+#lowratedAlertBox .close{text-indent:-999;background-position:0 -155px;}
+#shutmoreinfo,#detailspopup1{background-position:45px -154px;margin-left:5px;text-decoration:none;padding-right:59px;zoom:100%;}
+#notifyMe .notImg{background-position:0 -181px; cursor: pointer; display: block; height: 21px; margin-top: 22px;width: 86px;}
+#yesalert{background-position:-1px -286px; float:right; display: block;height: 22px;margin-left: 18px;width: 45px;}
+.footRate .rightService{text-align:center;margin-top:17px;margin-left:0px;float:right;width:257px;}
+.chooseSer{float: left;width:188px;margin-top:2px;text-align:right;}
+#lowratedAlertBox .titleAlert{background-position:-1px -245px; }
+.conrateDet{background-position:1px -213px; color:#7f7f7f;font-size:11px;float:left;width:575px;padding-left:32px;padding-top:3px;padding-bottom:2px;}
+.continueBtnimg{background-position: 0 -168px;display: block;width: 101px;height: 22px;float:left;}
+.conSpinner{float:left;margin-left:10px;width:16px;display:none;height:20px;background-position:0 4px}
+.veriImg{background-position:-1px -324px;width:52px;height:26px;display:block;float:right;margin-right:10px;}
+#searchDetails{margin-left:5px; margin-top:10px; height:20px;float:left;width:auto; font-size: 12px;}
+#goPrev{float:left;margin-left: 2px;margin-top: 11px;}
+#searchDateDet{margin-left:5px; margin-top:16px; height:20px;float:left;width:auto; font-size: 12px;}
+#goNext{float:left;margin-left: 5px;margin-top: 11px;}
+#goNext .bluetextbold, #goPrev .bluetextbold{font-size:11px; font-weight: bold; text-decoration:underline; outline-style: none;line-height:22px;}
+#modifyDiv{float:left;margin-top:11px;width:15%; margin-left:15px;}
+#modifyDiv .bluetextbold{font-size:11px; font-weight:normal; text-decoration:underline; outline-style: none;line-height:22px;}
+#loadingTxt{color: darkBlue;display: none;font-size: 14px;font-weight: bold;margin-left: 80px;margin-top: -15px;text-align: center;}
+.breadcrump{font-weight:normal; margin-right: 5px; float:right;}
+.breadcrump .highlight{text-transform:none !important; color:#000 !important;}
+.rightAreaSelectBus{padding:0px;}
+.searchSelectbus{display:none;width:100%;margin-top: 0px;}
+.luxuriaFare{margin-top:4px;padding-left:1px;margin-left:10px;}
+.bpDivmain{width:100%;}
+.bpDivmain #bpDiv{height:45px;display:none;}
+#bpDiv .leftBp{float:left;margin-top:20px;width:78%;}
+#bpDiv  #ratingFilterMessageText{text-align:left;display:none;  bottom: 8%; position:absolute;}
+#bpDiv .rightBp{float:right;width:18%; position:relative;line-height:1.2; height:45px;}
+.travlistMain{float:left;margin-left:0;}
+.leftBp #busTypeSelectDiv{float:left;margin-left:10px;}
+#busTypeSelectDiv #bustypelist{width:100px;}
+.bplistMain, .dplistMain{float:left;margin-left:5px;}
+.ratefilMain{float:right;margin-right:0px}
+.ratefilMain #ratingFilter{width:96px;}
+#alertMsg{display:none;}
+#loadingResults .loadVal{height:280px}
+.grids #NoResultMsg{display:none;height:300px;}
+#NoResultMsg .MisMatch{padding:5px;}
+#notifyMe{margin-bottom:10px;display:none;}
+.flashMain{float:left;width:83%;text-align:left;}
+.flashMain .flash{font-weight:bold;font-size:11px;text-align:left;color:#d02025;}
+#notifyMe .notifyBtn{float:right;text-align:center;}
+.grids #results{width: 960px;}
+.outerSelectbus{border: 0px dotted blue;}
+.outerSelectbus #iefader{display:none;position:absolute;top:300px;left:550px;}
+.outerSelectbus #fader{display:none; position:absolute; top:40%; left: 35%; color:#D0D0D0; font-size: 50px;font-weight: bold; height:100px; line-height:normal;}
+.outerSelectbus #selectedRouteId{display:none}
+#lowratedAlertBox{margin:10px 15px 15px 15px;display:none;cursor:auto;width:790px;}
+#lowratedAlertBox .topPart{text-align:right;position:relative;top:-23px;left:27px;font-weight:bold;cursor:pointer;}
+#serviceLevelRating .outRt{font-size:10px;text-align:left}
+#lowRatedAttributes span .blueTextNormal{font-weight:bold;font-size:12px;cursor:auto;}
+#lowIndividualRatings .col11{width:80px;height:20px;}
+#lowIndividualRatings .col21{width:80px;}
+#lowIndividualRatings .col31{width:35px;}
+#lowIndividualRatings .col41{width:480px;color:#7F7F7F;}
+#lowIndividualRatings .col31 #lowBusQualityRatingAvg{font-size:11px;}
+.areusure{text-align:right;margin-top:30px}
+.chooseSer .blueTextSmall{font-size:14px;}
+.chooseSer .blueTextNormal{font-size:13px;}
+#DetailsPopup{display:none;margin:10px 15px 15px;}
+#DetailsPopup .toppop,#moreInfoDiv .toppop{text-align:right;top:-23px;position:relative;left:29px;}
+#DetailsPopup .closepop,#moreInfoDiv .closepop{z-index:5000px;left:-4px;height:25px; background-color:#dadada; top: 4px;}
+.cursorval{cursor:pointer;}
+#detailspopup1 span, #shutmoreinfo span{font-weight:bold;padding-top:0px;color:#fff;font-size:16px}
+#moreInfoDiv{display:none;margin:10px 15px 15px;}
+#moreInfoDiv .cursorval2{cursor:pointer;background-color:#fff;}
+.winSeat{background-position:65px -358px;text-align:center;margin-top:0;height:17px;}
+.winSeat span{font-size:10px;color:#808285;font-weight: normal;font-family: Arial,Helvetica,sans-serif;}
+#notifyDiv{display:none;text-align:center;margin-top:12px;background:none;height:54px;}
+#operatorLevelRating{margin-left: 43px;text-align: left;}
+.valtd{font-size:11px}
+.valtdB{font-size:11px;background: none repeat scroll 0 0 #FAFAFA;}
+
+
+.trHead th span{ text-decoration:underline;}
+.trHead th{font-family: Tahoma,Arial,Helvetica,sans-serif;font-weight: bold;font-size:11px;color: #305AA0;height:40px;background:#f5f5f5;}
+a.ddTime, a.ddTime:visited, a.bdTime, a.bdTime:visited  {text-decoration:none !important;}
+.ddTime .timeT, .bdTime .timeT{text-decoration:underline;height:15px;background-position:52px -11px;padding-right:16px;}
+
+.darr, .uarr, .uarr1{text-decoration:none !important;}
+.darr{background-position:-13px -779px; display: inline-block; visibility:visible; height: 12px;left: 3px;position: relative;width: 8px;}
+.uarr { background-position: 2px -779px; display: inline-block; visibility:visible; height: 12px;left: 3px;position: relative;width: 8px;}
+.uarr1 { background-position: 2px -779px; display: inline-block; visibility:hidden; height: 12px;left: 3px;position: relative;width: 8px;}
+.lf12 { left:12px; }
+
+.tb-trav{text-align:left; cursor:pointer;}
+.tb-trav span{padding-left: 10px;}
+    
+.tb-btyp {text-align:left;cursor:pointer;}
+.tb-btyp span {padding-left:2px;}
+    
+
+
+.tb-tb span, .tb-r span, .tb-dat span,.tb-amen span, .tb-s span, .tb-far span,.tb-mt span  {position:relative; top:-2px;}
+.tb-dat .uarr, .tb-dat .darr{left:0}
+#listHead{clear:both;}
+#actvFltr{ cursor:pointer;}
+
+.fltr-Hd {border: 1px solid #B1B3B6; -moz-border-radius: 6px; padding:4px 8px; cursor:pointer;border-radius: 6px;height:16px;}
+#trvDiv, #busTypDiv, #dpsDiv, #bpsDiv, #busRateDiv,#amenDiv{background-color: white;position: absolute;z-index: 5; display:none;}
+#trvDiv {width: 158px;}
+#busTypDiv{width: 100px;}
+#busRateDiv,#amenDiv {width: 105px;}
+#dpsDiv, #bpsDiv {width: 200px;}
+
+
+
+.ul-listing {border: 1px solid lightGray;border-radius: 4px 4px 4px 4px;max-height: 200px;margin: 0;overflow-x: hidden;overflow-y: auto;padding-left: 5px;-mox-border-radius: 4px 4px 4px 4px;}
+
+#actvFltrBlk {clear:both; height:auto; margin: 5px 0px; display:none; width: 960px;}
+.actv-fltr {background-color:#F5F5F5; padding: 2px 5px; margin: 1px; font-size:10px; float:left;}
+.bold-X{font-size: 12px;font-weight: bold;margin-left: 5px;}
+
+#viewHideFlt{float: left; margin-left: 6px; width: 125px; margin-top:8px; display:none;}
+
+.travIcon, .busTypIcon, .chuntiIcon, .drop-arrow, .tickUnselected, .tickSelected, .busRateIcon,.amenIcon  {padding-right: 0px;cursor: pointer;}
+.travIcon { background-position: 0px -421px;height: 14px;width: 50px; padding-left:30px;float: left;}
+.busTypIcon { background-position: 0px -381px;height: 16px;width: 50px;padding-left:18px;float: left;}
+.chuntiIcon { background-position: 0px -402px;height: 14px;width: 82px;padding-left:17px;float: left;}
+.amenIcon  {background-position: 0px -514px;height: 16px;width:7px;padding-left:16px;float: left;}
+.busRateIcon {background-position: 0px -439px;height: 14px;width:50px;padding-left:17px;float: left;}
+.tickSelected { background-position: 0px -473px;display: inline-block;height: 13px;top: 3px;width: 14px;}
+.tickUnselected {background-position: 0px -495px;display: inline-block;height: 13px;top: 3px;width: 14px;}
+.drop-arrow{ background-position: 0 -454px;float: right;height: 12px;width: 12px;}
+
+ul.ul-listing li a { color:Gray;}
+#newFltr{font-size:11px; margin-top:0px;margin-bottom:5px; }
+
+#ratingFltr {float: left; width: 105px; margin-left:10px;}
+#bpFltr, #dpFltr {float: left; margin-left: 6px; width: 130px;}
+
+#amenityFltr {float: left; width: 105px; margin-left:10px;}
+.close-icon { background-image:url(../images/gtk-close.png); background-repeat:no-repeat; text-indent:-9999px; float:right; 
+	background-position: -4px -3px;display: inline-block;height: 12px;padding-right: 0px;position: relative;width: 12px;     top: 3px; cursor:pointer;
+	
+} 
+#list4Hd, #list5{width:960px;}
+.tb-dep {cursor:pointer;}
+.tb-arr {cursor:pointer;}
+.tb-tt {cursor:pointer;}
+.tb-s {cursor:pointer;}
+.tb-r {cursor:pointer;}
+.tb-mt {cursor:pointer;}
+.tb-far {cursor:pointer;}
+
+.tb-tb{width:221px;text-align:left;}
+.tb-amen{width:150px;padding-left:20px;text-align: left;}
+.tb-dat{width:98px;text-align:left;}
+.tb-s{width:192px;text-align:center;}
+.tb-r{width:80px;text-align:left;padding-left:0;}
+.tb-mt{width:50px;text-align:center;}
+.tb-far{width:128px;text-align:center;}
+
+#list5 .col7{width:128px;text-align:center;}
+#list5 tbody tr td{padding:7px 0;font-size:11px}
+#list5{border-collapse: collapse;border-spacing:0 1px;}
+#list5 tbody{border-bottom:1px solid #B1B3B6;border-top:1px solid #B1B3B6;}
+.fareVal2{padding-left:15px;font-weight:bold;font-size:18px;color:#2b8729;background-position:4px -651px;}
+.fareMain{text-align:center;}
+.ddTime .timeC{background-position:0 -589px;padding-right:30px;float: left;height: 17px;}
+.bdTime  .timeC{background-position:0 -609px;padding-right:30px;float: left;height: 17px;}
+.noarrT{padding-left:40px;}
+.stNo{background-position:3px -632px;text-align:right;width:76px;}
+.ratingIcon{background-position:0 -674px;width:13px;height:13px;float:left;margin-left:0px;margin-top:0;margin-right: 10px;}
+.ratingIconTxt{margin-left: 0;}
+.col4 .stNo{background:none;padding-left:0;}
+.hrblank{height:2px;}
+#list5 .hrblank tr td {padding:1px 0 0 0}
+#list5 .dNone{border-top:0px none;}
+.desAm{margin:0;padding:0;}
+.desAm ul{clear:both;overflow:hidden;list-style-type:none;padding:0 10px;margin:0;}
+.desAm ul li{float:left;line-height:20px;margin:0;padding:0;font-weight:normal;}
+.rateTooltip{width:100%; border:0px solid red;padding-bottom:10px;}
+.rateTooltip tr .smallText{font-weight:normal;font-size:11px;}
+.bpTipdet #mainTable tr td{font-weight:normal;font-size:11px;} 
+
+#newFltrBlk #newFltr .ul-listing{border:1px solid #d3d3d3;}
+.bookStatus{margin-left:4px;width:128px;text-align:left;}
+.viewSeatsImg {
+   background-position:0 -707px;
+    cursor: pointer;
+    height: 25px;
+    margin-left: 0;
+    padding-left:0;
+    width: 128px;
+      outline: medium none;
+    text-decoration: none;
+}
+.showSeatsImg
+{
+	  background-position:0 -744px;
+    height:25px;
+    margin-left:0;
+    width: 128px;
+    padding-right:0;display: none;cursor:pointer;
+    outline: medium none;
+    text-decoration: none;
+}
+.bookImgBtn
+{
+    background-position:0 -90px; display: block;height: 25px; width:128px;margin-left:0;
+    
+    }
+.numRate{width:63px;text-align:center;}
+#divRatingHead {float: left;margin-left:0px;text-align: center;width: 44px;margin-right:5px;}
+.askimg {float: left;height: 12px;margin-left: 0px;margin-right: 0;text-decoration: none;width: 12px;}
+#travFltr{width:158px; float:left;}
+.busTypFltr{float: left; margin-left: 10px; width: 99px;}
+#newFltr .ul-listing li{list-style: none outside none; font-size: 11px; color: gray; padding: 2px 0px;}
+#newFltr .ul-listing .clrFltr{text-align:right; padding-right:5px;}
+#newFltr .ul-listing .clrFltr span{color:blue; cursor:pointer;}
+#actvFltrBlk .actvTxt{float:left; margin:5px 10px 0px 0px; font-size:10px; color: #808080;}
+#actvFltrBlk #actvFltr{float:left; width:885px;}
+#busTypFltr{float: left;margin-left: 10px;width: 99px;}
+.routeMsg{font-size: 12px;margin-bottom: 10px;text-align: center;}
+.serFail{font-size:11px !important;font-weight:bold;margin-top:8px;display:none;color:#D02025;text-align:center;margin-bottom:10px;}
+
+
+
+.Dv0{background-position:0 -539px;height:18px;width:18px;cursor:pointer;}
+.Dv1{background-position:0 -566px;width:18px;height:18px;cursor:pointer;}
+.Bo0{background-position:-20px -539px;margin-left:5px;height:18px;width:18px;cursor:pointer;}
+.Bo1{background-position:-20px -566px;margin-left:5px;width:18px;height:18px;cursor:pointer;}
+.Bl0{background-position:-44px -541px;margin-left:5px;height:20px;width:20px;cursor:pointer;}
+.Bl1{background-position:-44px -568px;margin-left:5px;width:23px;height:20px;cursor:pointer;}
+.Cr0{background-position:-69px -539px;margin-left:6px;height:20px;width:20px;cursor:pointer;}
+.Cr1{background-position:-69px -566px;margin-left:6px;width:20px;height:20px;cursor:pointer;}
+
+#list5 .i1,#list5 .i8,#list5 .i15{padding:5px 20px 5px 10px;text-align:left;width:190px;}
+#list5 .i2,#list5 .i16{width:120px;text-align:left;padding-left:5px;padding-right:40px;}
+#list5 .i3,.i10,.i17{width:98px;text-align:left;}
+#list5 .i4,.i11,.i18{width:192px;text-align:center;}
+#list5 .i5,.i12,.i19{width:80px;text-align:left;}
+#list5 .i6,.i13,.i20{width:50px;text-align:left;}
+#list5 .i7,.i14,.i21{width:128px;text-align:center;}
+
+.G{background:#FAFAFA;}
+.i1{color:#17375E;font:bold 11px Tahoma;}
+.i2 span{float:left;font-size:17px;margin-top:6px;}
+.i2 .noAmen{text-align: center;width:85%;margin-top:0;}
+.i3 div{background-position:0 -590px;float:left;height:15px;padding-left:29px;cursor:pointer;}
+.i10 div{background-position:0 -610px;float:left;height:15px;padding-left:23px;cursor:pointer;}
+.i3 span{text-decoration:underline;height:15px;background-position:52px -11px;padding-right:17px;cursor:pointer;color:#305AA0;}
+.i3 span:hover{text-decoration:none;color:Black;}
+.i10 span{text-decoration:underline;height:15px;background-position:52px -11px;padding-right:19px;cursor:pointer;color:#305AA0;}
+.i10 span:hover{text-decoration:none;color:Black;}
+
+
+.i17 div{color:#7f7f7f;background-position:3px -632px;width:76px;text-align:right;}
+.i4{color:#7f7f7f;}
+.i10{color:#A9A9A9;text-align:center;}
+#list5 .i17,#list5 .i6{color:#A9A9A9;}
+.i4 span{color:#A9A9A9;}
+.i6 div{vertical-align:bottom;background-position:0 -798px;display:block;height:20px;width:19px;margin-left:17px;cursor:pointer;}
+.i7 span{padding-left:15px;font-weight:bold;font-size:18px;color:#2b8729;background-position:4px -651px;}
+.i8{color:#9A9A9A;}
+.i12 div{color:#EA6D00;font-size:13px;font-weight:bold;width:71px;text-align:center;}
+.i12 .Ne{color:#D02025;}
+.i12 span{color:#9A9A9A;font-size:11px;font-weight:normal;}
+.i11 div{background-position:65px -358px;height:17px;padding-top:1px;font-size:10px;color:#808285;}
+.i14 span{color:#305AA0;text-decoration:underline;}
+.i14 span:hover{color:Black;text-decoration:none;}
+.i15 div{color:#305AA0;text-decoration:underline;cursor:pointer;display:inline;}
+.i15 div:hover{color:Black;text-decoration:none;}
+.i15 span{color:#305AA0;text-decoration:underline;cursor:pointer;}
+.i15 span:hover{color:Black;text-decoration:none;}
+.i16 div{color:#305AA0;text-decoration:underline;display:inline;background-position:0 -34px;padding-left:20px;cursor:pointer;}
+.i16 div:hover{color:Black;text-decoration:none;}
+.i16 span,.i19 span{color:#305AA0;text-decoration:underline;}
+.i16 span:hover,.i19 span:hover{color:Black;text-decoration:none;cursor:pointer;}
+
+.i12 span:hover{cursor:pointer;}
+
+.i19 span{background-position:0 -674px;width:13px;height:13px;float:left;padding-left:25px;}
+.i210{background-position:0 -707px;cursor:pointer;height:25px;margin-left:0;padding-left:0;width:128px;outline:medium none;text-decoration:none;}
+.i211{background-position:0 -744px;height:25px;margin-left:0;width:128px;padding-right:0;display:none;cursor:pointer;outline:medium none;text-decoration: none;}
+
+.i50,.i51{text-align:left;width:65px;background:url(../images/star_empty.gif) 0 0 repeat-x;}
+.i51 div{text-align:left;height:12px;background:url(../images/star_filled.gif) 0 0 repeat-x;}
+.i50 div{text-align:left;height:12px;background:url(../images/red-star.png) 0 0 repeat-x;}
+
+#list5 tbody .r1 td{padding-top:15px;border-top:1px solid #B1B3B6;}
+#list5 tbody .r3 td{padding-bottom:15px;border-bottom:1px solid #B1B3B6;}
+#list5 .r3 .col7{text-align:left;}
+
+#listHead{position:relative;display:none;}
+#asky{position:absolute;background-color:#FFFFFF;border:1px solid brown;display:none;top:42px;left:127px;padding:10px}
+#fixedtipdiv .rateStrmsg div{margin-top:10px;}
+.leftInnerBox1 ul{margin:0;padding:0 10px 15px 10px;}
+.leftInnerBox1 ul li{list-style-type:none;}
+.leftInnerBox1 .leftOne, .leftInnerBox1 .leftFour{float:left;width:200px;}
+.leftInnerBox1 .leftFour{margin-top:15px;width:100px;}
+.leftInnerBox1 #calendar{height:22px;}
+.rightAreaSelectBus .leftInnerBox1{zoom:100%;border-top:0 none;}
+
+.lufltr {color:#305AA0;text-decoration:underline;cursor:pointer;font-size:11px;}
+span.lufltr:hover{color:Black;text-decoration:none;}
+.tipsV{margin-left:10px;font-size:11px;color: #D02025;font-weight:bold;}
+
+
+
+
+.clear{clear:both;font-size:0;height:0;line-height:0}
+
+
+.headline {
+color: #000;
+font-weight: 300;
+-webkit-font-smoothing: antialiased !important;
+opacity: 0.8;
+margin: 100px 0 30px 0;
+font-size: 28px;
+}
+
+.travels_search
+{
+	margin-top:0px;
+	padding-top:10px;
+	border-bottom:1px dotted #ccc;
+}
+
+.travels_search:hover
+{
+	background-color:#FCE7E7;	
+}
+
+.mobile-ticket
+{
+	font-size: 20px;
+	color: #812990;
+	font-family: 'sosa';
+}
+.mobile-ticket img
+{
+	width:40%;
+}
+.mobile-ticket-disabled
+{
+	font-size: 20px;
+	color: #818181;
+	font-family: 'sosa';
+}
+.mobile-ticket-disabled img
+{
+	width:40%;
+}
+
+.align_sort_bar
+{
+
+}
+.bus_tickets_block
+{
+	
+}
+.lowerDeck
+{
+	width: 350px; height: 146px;
+}
+
+.seatcontainer
+{
+	min-width: 246px; height: 110px;
+}
+.mainFF
+{
+	
+}
+.upperDeck
+{
+	width: 350px; height: 146px;
+}
+.glyphicon
+{
+	/*color:#C7C7C7;*/
+}
+.jumbotron strong 
+{
+    font-size:14px;
+}
+.topborder
+{
+    height: 3px;
+    width: 100%;
+    background-color: #ECECEC;
+}
+
+.bus_background .low-dek-seat-arrange
+{
+	background: rgb(255, 255, 255) repeat repeat 0px 0px;
+	border-radius:6px;
+}
+
+
+.busSeat .seatcontainer 
+{
+	background: rgb(255, 255, 255) repeat repeat 0px 0px;
+	border-radius:6px;
+	margin-left:50px;
+}
+
+
+.busSeat
+{
+	background: rgb(255, 255, 255) repeat repeat 0px 0px;
+	border-radius:6px;
+	padding:10px;
+	margin:10px;
+	    padding-right: 30px;
+	
+}
+
+seatcontainer::before
+{
+	
+}
+
+
+@media (max-width: 767px) {
+ .travels_name
+ {
+	 min-height:80px;
+ }
+ .travel_time
+ {
+	 min-height:80px;
+ }
+ .travel_seats
+ {
+	 min-height:30px;
+ }
+ .travel_mobileticket
+ {
+	 min-height:40px;
+ }
+ .travel_far
+ {
+	 min-height:30px;
+ }
+
+}
+
+
+@media (max-width: 480px) {
+	.seat-layout-1
+	 {
+		 -ms-transform:rotate(90deg);
+		 -webkit-transform:rotate(90deg);
+		 transform:rotate(90deg);
+		 margin-bottom:40px;
+	 }
+	 
+	 .seat-layout
+	 {
+		 -ms-transform:rotate(90deg);
+		 -webkit-transform:rotate(90deg);
+		 transform:rotate(90deg);
+		 margin-bottom:40px;
+	 }
+	 
+	 .seat-layout-1
+	 {
+		 margin-top: 200px;
+	 }
+	 
+	 .seat-layout
+	 {
+		 margin-top: 200px;
+	 }
+	 
+	 .seatSelectionMeta
+	 {
+		 margin-top: 104px;
+	 }
+	 
+
+}
+
+
+
+.bus_background .upperDeck
+{
+	background: rgb(255, 255, 255) repeat repeat 0px 0px;
+	border-radius:6px;
+}
+
+.bus_tickets_block
+{
+	display:none;
+}
+
