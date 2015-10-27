@@ -46,7 +46,7 @@ class RetaileritrController extends BaseController {
 			$Input=array(
 				"userId"=>Session::get('user_name'),
 				"userLink"=>$filename,
-				"prodCode"=>"3009"
+				"prodCode"=>"4001"
 				);
 			$data=json_encode($Input);
 			$output=Services::addproductitr($data);
